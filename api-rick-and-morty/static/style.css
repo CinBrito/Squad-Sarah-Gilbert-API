@@ -77,6 +77,8 @@ body {
     border-radius: 4px;
     padding-top: 4px;
     padding-bottom: 4px;
+    text-align: center;    
+    text-decoration: none;
 }
 
 .card {
@@ -85,17 +87,18 @@ body {
 
 /* DETALHES */
 .afastar {
-    padding-left: 150px;
+    padding-left: 350px;
 }
 
 .container p {
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 10px;
+    margin-bottom: 0;
 }
 
 /* FOOTER */
 
-.fixed-bottom img {
+.fixed-bottom {
     display: block;
     max-width: 120px;
     border-radius: 0;
@@ -106,6 +109,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;    
+    margin-top: 30px;
     font-size: 9px;
     background-color: #17AEBF;
     color:#F2F2F2;
@@ -146,3 +150,14 @@ ul li {
     margin-bottom: 9px; 
 }
 
+.lista_detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    height: 300px;
+}
+
+.lista_detalhes li {
+    text-decoration: none;
+}
