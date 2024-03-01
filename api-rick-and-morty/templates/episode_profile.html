@@ -1,23 +1,30 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
+
+{% block title %}Detalhes do Episódio{% endblock %}
 
 {% block content %}
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-6">
-        <img src="{{ episode_profile.image }}" alt="{{ episode_profile.name }}" class="img-fluid mb-3">
-      </div>
-      <div class="col-md-6">
-        <h1>{{ episode_profile.name }}</h1>
-        <p>Data de Lançamento: {{ episode_profile.air_date }}</p>
-        <p>Código: {{ episode_profile.episode }}</p>
-        <p>Personagens no Episódio:</p>
-        <ul>
-          {% for character in characters_list %}
-            <li><a href="{{ url_for('get_profile', id=character.id) }}">{{ character.name }}</a></li>
-          {% endfor %}
-        </ul>
-        <a href="{{ url_for('get_episodes') }}" class="btn btn-primary">Voltar para a lista de episódios</a>
-      </div>
+<div class="container mt-4 afastar">
+  <h1>Detalhes do Episódio</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Nome:</strong> <span class="epiname">{{ episode_profile.name }}</span>
+      <p><strong>Data de Lançamento:</strong> {{ episode_profile.air_date }}</p>
+      <p><strong>Código:</strong> {{ episode_profile.episode }}</p>
+
+      <p><strong>Personagens no Episódio:</strong></p>
+      <ul class="lista_detalhes">
+        {% for character_url in episode_profile.characters %}
+        {% set character_id = character_url.split('/')[-1] %}
+        <li>
+          <a href="{{ url_for('get_profile', id=character_id) }}">{{ character_id }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="{{ url_for('get_episodes') }}" class="btn btn-primary">Voltar para a lista de episódios</a>
     </div>
   </div>
+</div>
+
+{% include "partials/_lateral.html" %}
+
 {% endblock %}

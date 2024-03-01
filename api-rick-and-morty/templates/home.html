@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}API Rick and Morty{% endblock %}
+
+{% block content %}
+<div class="landpage">
+    <img src="{{ url_for('static', filename='landing_page.png') }}" alt="rick-and-morty">
+    <a class="botao" href="/personagens">ENTRAR</a>
+</div>
+{% endblock %}

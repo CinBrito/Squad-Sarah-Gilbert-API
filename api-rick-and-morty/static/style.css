@@ -1,0 +1,148 @@
+body {
+    padding-top: 56px;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+/* LANDING PAGE */
+
+.landpage {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.landpage img {
+    display: block;
+    max-height: 800px;
+    border-radius: 0%;
+}
+
+.landpage a {
+    color: #A7BF50;
+    background-color: #F2F2F2;
+    font-weight: 400;
+    font-size: 18px;
+    border: 0.5px solid #A7BF50;
+    border-radius: 4px;
+    text-align: center;    
+    text-decoration: none;
+}
+
+/* BARRA DE NAVEGAÇÃO */
+
+.navbar {    
+    font-size: 14px;
+    background-color: #17AEBF;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+    border-bottom: 0;
+    height: auto;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    text-decoration: none !important; 
+}
+
+/* TÍTULOS */
+
+.container h1 {
+    color: #17AEBF;
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* PERSONAGENS */
+
+.botao {    
+    text-align: center;    
+    text-decoration: none;
+}
+
+.container h5 {
+    color: #A7BF50;
+    font-weight: 400;
+    font-size: 18px;
+    border: 0.5px solid #A7BF50;
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.card {
+    border: 0.5px solid #A7BF50;
+}
+
+/* DETALHES */
+.afastar {
+    padding-left: 150px;
+}
+
+.container p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* FOOTER */
+
+.fixed-bottom img {
+    display: block;
+    max-width: 120px;
+    border-radius: 0;
+    padding-left: 8px;
+}
+
+.faixa_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-size: 9px;
+    background-color: #17AEBF;
+    color:#F2F2F2;
+    text-align: center;    
+}
+
+.faixa_footer img {
+    max-width: 24px;    
+}
+
+/* Profile */
+
+.container {
+    margin-top: 20px; 
+}
+
+img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #007BFF;
+}
+
+p {
+    font-size: 16px; 
+}
+
+ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+ul li {
+    margin-bottom: 9px; 
+}
+

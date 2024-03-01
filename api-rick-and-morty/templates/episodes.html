@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lista de Episódios</title>
-</head>
-<body>
-    <main class="container">
-        {% include "nav.html" %}
+{% extends "base.html" %}
 
+{% block title %}Lista de Episódios{% endblock %}
+
+{% block content %}
+    <main class="container">
         <h1>Lista de Episódios</h1>
 
         <table class="table">
@@ -17,7 +12,7 @@
                     <th>Nome</th>
                     <th>Data de Lançamento</th>
                     <th>Código</th>
-                    <th>Perfil</th>
+                    <th>Detalhes</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,11 +21,10 @@
                         <td>{{ episode.name }}</td>
                         <td>{{ episode.air_date }}</td>
                         <td>{{ episode.episode }}</td>
-                        <td><a href="{{ url_for('get_episode_profile', id=episode.id) }}">Ver Perfil</a></td>
+                        <td><a href="{{ url_for('get_episode_profile', id=episode.id) }}">Ver Detalhes</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </main>
-</body>
-</html>
+{% endblock %}
