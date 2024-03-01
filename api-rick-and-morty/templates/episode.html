@@ -1,32 +1,35 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Detalhes do Episódio</title>
 </head>
+
 <body>
     <main class="container">
 
         {% include "nav.html" %}
 
         {% block content %}
-            <h1>Detalhes do Episódio</h1>
+        <h1>Detalhes do Episódio</h1>
 
-            <div>
-                <p><strong>Nome:</strong> {{ episode_profile.name }}</p>
-                <p><strong>Data de Lançamento:</strong> {{ episode_profile.air_date }}</p>
-                <p><strong>Código:</strong> {{ episode_profile.episode }}</p>
-            </div>
+        <div>
+            <p><strong>Nome:</strong> {{ episode_profile.name }}</p>
+            <p><strong>Data de Lançamento:</strong> {{ episode_profile.air_date }}</p>
+            <p><strong>Código:</strong> {{ episode_profile.episode }}</p>
+        </div>
 
-            <h2>Personagens no Episódio</h2>
-            <ul>
-                {% for character in characters_list %}
-                    <li><a href="{{ url_for('get_profile', id=character.id) }}">{{ character.name }}</a></li>
-                {% endfor %}
-            </ul>
+        <h2>Personagens no Episódio</h2>
+        <ul>
+            {% for character in characters_list %}
+            <li><a href="{{ url_for('get_profile', id=character.id) }}">{{ character.name }}</a></li>
+            {% endfor %}
+        </ul>
         {% endblock %}
 
     </main>
 </body>
-</html>
+
+</html> -->
