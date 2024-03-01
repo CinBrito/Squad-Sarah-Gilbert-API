@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>{{ location_profile.name }}</h1>
+    <p>Tipo: {{ location_profile.type }}</p>
+    <p>Dimensão: {{ location_profile.dimension }}</p>
+
+    <h2>Personagens na Localização</h2>
+    <ul>
+        {% for character_url in location_profile.residents %}
+            {% set character_id = character_url.split('/')[-1] %}
+            <li>
+                <a href="{{ url_for('get_profile', id=character_id) }}">{{ character_id }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('get_locations') }}">Voltar para a lista de localizações</a>
+{% endblock %}

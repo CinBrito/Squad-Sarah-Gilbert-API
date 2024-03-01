@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil do Personagem</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        .container {
+            margin-top: 20px; 
+        }
+
+        img {
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 16px; 
+        }
+
+        ul {
+            list-style-type: none; 
+            padding: 0; 
+        }
+
+        ul li {
+            margin-bottom: 9px; 
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+
+        {% include "nav.html" %}
+
+        {% block content %}
+            <div class="row">
+                <div class="col-3 col-sm-12">
+                    <h2>{{ profile.name }}</h2>
+                    <img src="{{ profile.image }}" alt="{{ profile.name }} Image" class="img-fluid">
+
+                    <div>
+                        <p><strong>Nome:</strong> {{ profile.name }}</p>
+                        <p><strong>Espécie:</strong> {{ profile.species }}</p>
+                        <p><strong>Gênero:</strong> {{ profile.gender }}</p>
+                        <p><strong>Origem:</strong> <a href="{{ url_for('get_location_profile', id=profile.origin.url.split('/')[-1]) }}">{{ profile.origin.name }}</a></p>
+                        <p><strong>Localização:</strong> <a href="{{ url_for('get_location_profile', id=profile.location.url.split('/')[-1]) }}">{{ profile.location.name }}</a></p>
+                    </div>
+
+                    <h4>Episódios em que o Personagem Aparece</h4>
+                    <ul>
+                        {% for episode in profile.episode %}
+                            <li><a href="{{ url_for('get_episode_profile', id=episode.split('/')[-1]) }}">{{ episode }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endblock %}
+
+    </main>
+</body>
+</html>
