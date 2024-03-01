@@ -72,7 +72,7 @@ def episode_profile(id):
 
     characters_list = []
     for character_url in episode_profile["characters"]:
-        respohanse_cracter = urllib.request.urlopen(character_url)
+        response_character = urllib.request.urlopen(character_url)
         data_character = response_character.read()
         character = json.loads(data_character)
         characters_list.append(character)
